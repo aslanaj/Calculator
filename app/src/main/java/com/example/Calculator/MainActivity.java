@@ -3,9 +3,12 @@ package com.example.Calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.aslan_m2_hw_7.R;
@@ -13,9 +16,10 @@ import com.example.aslan_m2_hw_7.R;
 public class MainActivity extends AppCompatActivity {
 
     String oldNumber;
-    String operator;
+    String operator = "";
     TextView textView;
     Boolean isNew = true;
+    private  String text1 = "";
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -23,9 +27,58 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.text_view);
+        Log.d("aslanaj","onCreate");
+        findViewById(R.id.btn_second_activity).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+            String text1 = ((TextView)findViewById(R.id.text_view)).getText().toString();
+            intent.putExtra("key",text1);
+            startActivity(intent);
+
+        });
+        Log.d("aslanaj", text1);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("aslanaj","onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("aslanaj","onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("aslanaj","onPause");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("aslanaj","onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("aslanaj","onDestroy");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("aslanaj","onRestart");
+    }
+
+
+
     public void onNumberClick(View view) {
+
 
         if(isNew)
             textView.setText("");
@@ -80,11 +133,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_multiply: operator="*"; break;
             case R.id.btn_divide:  operator="/"; break;
 
+
         }
 
     }
 
     public void onClickEqual(View view) {
+
         String newNumber = textView.getText().toString();
         Double result = 0.0;
         switch (operator) {
@@ -108,4 +163,34 @@ public class MainActivity extends AppCompatActivity {
            return  true;
        }
     }
+
+    public void onClickPercent(View view) {
+
+
+        if(operator == ""){
+            String number = textView.getText().toString();
+            double temp = Double.parseDouble(number) / 100;
+            number = temp+"";
+            textView.setText(number);
+        } else {
+            Double result = 0.0;
+            String newNumber = textView.getText().toString();
+            switch (operator) {
+                case "+": result = Double.parseDouble(oldNumber) + Double.parseDouble(oldNumber) * Double.parseDouble(newNumber) / 100 ;
+                break;
+                case "-": result = Double.parseDouble(oldNumber) - Double.parseDouble(oldNumber) * Double.parseDouble(newNumber) / 100 ;
+                break;
+                case "*": result = Double.parseDouble(oldNumber)  * Double.parseDouble(newNumber) / 100 ;
+                break;
+                case "/": result = Double.parseDouble(oldNumber) / Double.parseDouble(newNumber) * 100 ;
+                break;
+            }
+
+            textView.setText(result+"");
+            operator = "";
+        }
+
+
+    }
+
 }

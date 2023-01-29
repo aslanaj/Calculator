@@ -6,4 +6,213 @@
     android:layout_height="match_parent"
     tools:context="com.example.Calculator.SecondActivity">
 
+
+
+
+    <LinearLayout
+        android:id="@+id/bg_conteiner"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/blue_gray"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_menu"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_launcher_logo"
+                android:layout_marginHorizontal="120dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_search"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bg_second_conteiner"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/blue_white"
+        app:layout_constraintTop_toBottomOf="@id/bg_conteiner" >
+
+        <TextView
+            android:id="@+id/text_view_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textView_1"
+            android:textColor="@color/blue_gray"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Second.Base.Button"
+                android:text="@string/textView_2"
+                />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Second.Base.Button"
+            android:text="@string/textView_3"
+            />
+        <com.google.android.material.button.MaterialButton
+            style="@style/Second.Base.Button"
+            android:text="@string/textView_4"
+            />
+        <com.google.android.material.button.MaterialButton
+            style="@style/Second.Base.Button"
+            android:text="@string/textView_5"
+            />
+
+        <TextView
+            android:id="@+id/text_view_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textView_6"
+            android:textColor="@color/blue_gray"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_red"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:textAllCaps="false"
+            android:text="@string/textView_7"
+            app:cornerRadius="20dp"
+            android:backgroundTint="@color/red"
+            />
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bg_third_conteiner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/bg_second_conteiner"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="end">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dark_dot"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dark_dot"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dark_dot"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_white_dot"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_white_dot"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_white_dot"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_white_dot"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_white_dot"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="@string/textView_8"
+                android:layout_marginStart="20dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_gray"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_down_"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="@string/textView_9"
+                android:layout_marginStart="30dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_gray"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_down_"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

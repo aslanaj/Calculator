@@ -19,4 +19,14 @@
     <string name="s_plus">+</string>
     <string name="s_equal">=</string>
     <string name="s_dot">.</string>
+    <string name="textView_1">Policies</string>
+    <string name="textView_2">Policy</string>
+    <string name="textView_3">Product Category</string>
+    <string name="textView_4">Origin Country</string>
+    <string name="textView_5">Brand</string>
+    <string name="textView_6">Current Policies</string>
+    <string name="textView_7">Export as CSV</string>
+    <string name="textView_8">Country of Origin</string>
+    <string name="textView_9">Product Category</string>
+    <string name="btn_second_activity">Second Activity</string>
 </resources>
