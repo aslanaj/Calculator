@@ -29,7 +29,6 @@ public class SecondActivity extends AppCompatActivity {
         String result = intent.getStringExtra("key");
         ((TextView) findViewById(R.id.text_view_result)).setText(result);
 
-
         buttonDestroy.setOnClickListener(v -> {
             Intent intent1 = new Intent(Intent.ACTION_MAIN);
             intent1.addCategory( Intent.CATEGORY_HOME);

@@ -18,6 +18,7 @@
             android:backgroundTint="@color/orange"
             app:cornerRadius="20dp"
             android:text="@string/btn_second_activity"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

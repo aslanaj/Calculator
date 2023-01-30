@@ -78,8 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onNumberClick(View view) {
-
-
+        findViewById(R.id.btn_second_activity).setVisibility(View.GONE);
         if(isNew)
             textView.setText("");
         isNew = false;
@@ -105,12 +104,12 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btn_p_m:
 
-               if (minusPresent(number)){
-                   number = number.substring(1);
-               }else {
-                   number = "-" + number;
-               }
-                   break;
+                if (minusPresent(number)){
+                    number = number.substring(1);
+                }else {
+                    number = "-" + number;
+                }
+                break;
 
         }
         textView.setText(number);
@@ -125,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onOperationClick(View view) {
+        findViewById(R.id.btn_second_activity).setVisibility(View.GONE);
         isNew = true;
         oldNumber = textView.getText().toString();
         switch (view.getId()){
@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickEqual(View view) {
 
+        findViewById(R.id.btn_second_activity).setVisibility(View.VISIBLE);
         String newNumber = textView.getText().toString();
         Double result = 0.0;
         switch (operator) {
@@ -152,20 +153,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void acClick(View view) {
+        findViewById(R.id.btn_second_activity).setVisibility(View.GONE);
         textView.setText("0");
         isNew = true;
     }
 
     public boolean dotIsPresent(String number){
-       if(number.indexOf(".") == -1){
-           return false;
-       } else {
-           return  true;
-       }
+
+        if(number.indexOf(".") == -1){
+            return false;
+        } else {
+            return  true;
+        }
     }
 
     public void onClickPercent(View view) {
-
+        findViewById(R.id.btn_second_activity).setVisibility(View.GONE);
 
         if(operator == ""){
             String number = textView.getText().toString();
@@ -177,13 +180,13 @@ public class MainActivity extends AppCompatActivity {
             String newNumber = textView.getText().toString();
             switch (operator) {
                 case "+": result = Double.parseDouble(oldNumber) + Double.parseDouble(oldNumber) * Double.parseDouble(newNumber) / 100 ;
-                break;
+                    break;
                 case "-": result = Double.parseDouble(oldNumber) - Double.parseDouble(oldNumber) * Double.parseDouble(newNumber) / 100 ;
-                break;
+                    break;
                 case "*": result = Double.parseDouble(oldNumber)  * Double.parseDouble(newNumber) / 100 ;
-                break;
+                    break;
                 case "/": result = Double.parseDouble(oldNumber) / Double.parseDouble(newNumber) * 100 ;
-                break;
+                    break;
             }
 
             textView.setText(result+"");
